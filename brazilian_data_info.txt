@@ -1,0 +1,129 @@
+num_orders for customers
+1    96.95
+2     2.80
+3     0.20
+4     0.03
+5     0.01
+6     0.01
+7     0.00
+9     0.00
+16    0.00
+Name: count, dtype: float64
+
+Repeat rate : 3.0528191154894153
+one-time rate : 96.94718088451059
+
+most cutomers make one order
+
+0.25   1.00
+0.50   1.00
+0.75   1.00
+0.90   1.00
+0.95   1.00
+0.99   2.00
+Name: num_orders, dtype: float64
+max : 16
+----------------------------------------------------------------------------------------------------
+0.25      47.90
+0.50      89.90
+0.75     155.00
+0.90     284.00
+0.95     422.00
+0.99   1,013.59
+1.00   2,338.08
+Name: total_price, dtype: float64
+max : 13440.0
+----------------------------------------------------------------------------------------------------
+0.25    14.08
+0.50    17.60
+0.75    25.54
+0.90    42.09
+0.95    57.96
+0.99   110.38
+Name: total_freight, dtype: float64
+max : 1794.96
+
+most customers belongs to same categroy "normal"
+
+state	num_customers	num_orders	total_price	total_freight	percentage_customers	percentage_orders	percentage_revenue	revenue_per_customer	avg_order_value
+0	AC	77	81	15,982.95	3,686.75	0.08	0.08	0.12	207.57	197.32
+1	AL	399	411	80,314.81	15,914.59	0.42	0.42	0.59	201.29	195.41
+2	AM	142	147	22,356.84	5,478.89	0.15	0.15	0.16	157.44	152.09
+3	AP	67	68	13,474.30	2,788.50	0.07	0.07	0.10	201.11	198.15
+4	BA	3257	3360	511,613.40	100,202.87	3.41	3.41	3.76	157.08	152.27
+5	CE	1304	1326	227,195.71	48,322.78	1.37	1.34	1.67	174.23	171.34
+6	DF	2060	2124	302,002.64	50,568.77	2.16	2.15	2.22	146.60	142.19
+7	ES	1956	2026	275,127.21	49,818.90	2.05	2.05	2.02	140.66	135.80
+8	GO	1941	2010	295,476.84	53,201.12	2.03	2.04	2.17	152.23	147.00
+9	MA	718	739	119,363.12	31,491.28	0.75	0.75	0.88	166.24	161.52
+10	MG	11173	11543	1,585,318.90	270,790.17	11.71	11.70	11.66	141.89	137.34
+11	MS	687	708	116,642.74	19,125.59	0.72	0.72	0.86	169.79	164.75
+12	MT	872	903	156,538.63	29,729.57	0.91	0.92	1.15	179.52	173.35
+13	PA	944	970	178,947.81	38,699.30	0.99	0.98	1.32	189.56	184.48
+14	PB	515	532	115,217.99	25,746.02	0.54	0.54	0.85	223.72	216.58
+15	PE	1600	1645	262,228.04	59,241.51	1.68	1.67	1.93	163.89	159.41
+16	PI	481	493	86,914.08	21,218.20	0.50	0.50	0.64	180.69	176.30
+17	PR	4839	5000	683,178.56	117,878.60	5.07	5.07	5.03	141.18	136.64
+18	RJ	12299	12761	1,823,944.89	305,561.82	12.89	12.93	13.42	148.30	142.93
+19	RN	471	482	83,034.98	18,860.10	0.49	0.49	0.61	176.30	172.27
+20	RO	234	246	46,060.74	11,369.38	0.25	0.25	0.34	196.84	187.24
+21	RR	45	46	7,829.43	2,235.19	0.05	0.05	0.06	173.99	170.20
+22	RS	5248	5432	750,384.02	135,526.80	5.50	5.51	5.52	142.98	138.14
+23	SC	3508	3608	519,791.04	89,456.68	3.68	3.66	3.82	148.17	144.07
+24	SE	336	344	58,786.94	14,116.63	0.35	0.35	0.43	174.96	170.89
+25	SP	39975	41382	5,204,295.35	719,146.85	41.89	41.94	38.29	130.19	125.76
+26	TO	272	279	49,621.74	11,732.68	0.29	0.28	0.37	182.43	177.86
+
+
+there is difference between num of cusotmers per state
+
+min one time rate : 94.8051948051948
+max one time rate : 98.50746268656717
+----------------------------------------------------------------------------------------------------
+min repeat rate : 1.4925373134328357
+max repeat rate : 5.19480519480519
+
+
+
+'order_purchase_timestamp',
+'order_approved_at'
+'order_delivered_carrier_date',
+'order_delivered_customer_date',
+'order_estimated_delivery_date',
+
+
+nans columns:
+order_approved_at                  15
+order_delivered_carrier_date     1194
+order_delivered_customer_date    2454
+
+There are unapproved requests, yet their status is "Delivered".
+
+
+orders status with nan delivered carrier date
+order_status
+canceled       386
+invoiced       312
+processing     301
+unavailable      6
+approved         2
+delivered        2
+Name: count, dtype: int64
+
+
+all orders with nan delivered carrier date also nan in delivered customer date, except one order
+	order_id	customer_id	order_status	order_purchase_timestamp	order_approved_at	order_delivered_carrier_date	order_delivered_customer_date	order_estimated_delivery_date	customer_unique_id	customer_zip_code_prefix	customer_city	customer_state	total_price	total_frieght	item_count
+16294	2aa91108853cecb43c84a5dc5b277475	afeb16c7f46396c0ed54acb45ccaaa40	delivered	2017-09-29 08:52:58	2017-09-29 09:07:16	NaN	2017-11-20 19:44:47	2017-11-14 00:00:00	a2ac81ecc3704410ae240e74d4f0af40	13334	indaiatuba	SP	179.00	14.98	1
+
+ 
+there are 8 orders with nan delivered customer date also order status is "delivered" 
+
+order_status and delivered customer date is nan
+shipped        1106
+canceled        455
+invoiced        312
+processing      301
+delivered         8
+unavailable       6
+approved          2
+Name: count, dtype: int64

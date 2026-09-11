@@ -1,0 +1,8 @@
+customer_city
+price 
+order_status
+purchase_day
+purchase_month
+deliver_days (delivered_date - purchase_date)
+freight_value
+
